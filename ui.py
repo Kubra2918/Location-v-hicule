@@ -14,3 +14,21 @@ def afficher_menu():
 
 def demander_choix_menu():
     return input("Votre choix : ")
+
+
+def afficher_clients(clients):
+    print("============================================================")
+    print("LISTE DES CLIENTS")
+    print("============================================================")
+    for c in clients:
+        print(str(c))
+    print("============================================================")
+
+
+def afficher_vehicules(vehicules):
+    print("============================================================")
+    print("LISTE DES VÉHICULES")
+    print("============================================================")
+    for v in vehicules:
+        print(str(v))
+    print("============================================================")
