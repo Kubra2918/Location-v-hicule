@@ -1,3 +1,9 @@
+import os
+
+
+def nettoyer_terminal():
+    os.system("cls" if os.name == "nt" else "clear")
+    
 def afficher_menu():
     print("============================================================")
     print("SYSTÈME DE LOCATION DE VÉHICULES")

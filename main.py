@@ -6,7 +6,7 @@ from data_manager import (
     sauvegarder_reservation,
 )
 from models import Reservation, TarifsManager
-from ui import (afficher_menu, demander_choix_menu, afficher_clients, afficher_vehicules, afficher_reservations, afficher_reservations_client)
+from ui import (afficher_menu, demander_choix_menu, afficher_clients, afficher_vehicules, afficher_reservations, afficher_reservations_client, nettoyer_terminal,)
 
 
 def main():
@@ -17,6 +17,8 @@ def main():
         afficher_menu()
         choix = demander_choix_menu()
 
+        if choix in {"1", "2", "3", "4", "5", "6", "7"}:
+            nettoyer_terminal()
         if choix == "1":
             afficher_clients(clients)
 
