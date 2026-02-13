@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Reservation:
     def __init__(
         self,
@@ -18,7 +20,17 @@ class Reservation:
         self.forfait_km = forfait_km
         self.cout_journalier = cout_journalier
         self.prix_km_supp = prix_km_supp
-        self.cout_estime = 0.0
+        self.cout_estime = self._calculer_cout_estime()
+
+    def _calculer_cout_estime(self) -> float:
+        date_depart_obj = datetime.strptime(self.date_depart, "%Y-%m-%d")
+        date_retour_obj = datetime.strptime(self.date_retour, "%Y-%m-%d")
+
+        nb_jours = (date_retour_obj - date_depart_obj).days
+        if nb_jours <= 0:
+            nb_jours = 1
+
+        return nb_jours * self.cout_journalier
 
     def __str__(self) -> str:
         return (
