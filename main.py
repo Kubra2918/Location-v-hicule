@@ -6,7 +6,7 @@ from data_manager import (
     sauvegarder_reservation,
 )
 from models import Reservation, TarifsManager
-from ui import afficher_menu, demander_choix_menu, afficher_clients, afficher_vehicules
+from ui import (afficher_menu, demander_choix_menu, afficher_clients, afficher_vehicules, afficher_reservations, afficher_reservations_client)
 
 
 def main():
@@ -76,6 +76,15 @@ def main():
                 print("Réservation enregistrée.")
             else:
                 print("Réservation annulée.")
+
+        elif choix == "5":
+            reservations = charger_reservations()
+            afficher_reservations(reservations)
+
+        elif choix == "6":
+            reservations = charger_reservations()
+            id_client = input("Entrez l'ID du client : ")
+            afficher_reservations_client(reservations, id_client)
 
         elif choix == "7":
             print("Au revoir.")

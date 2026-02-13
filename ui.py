@@ -32,3 +32,28 @@ def afficher_vehicules(vehicules):
     for v in vehicules:
         print(str(v))
     print("============================================================")
+
+def afficher_reservations(reservations):
+    print("============================================================")
+    print("LISTE DES RÉSERVATIONS")
+    print("============================================================")
+    for r in reservations:
+        print(str(r))
+    print("============================================================")
+
+
+def afficher_reservations_client(reservations, id_client):
+    print("============================================================")
+    print(f"RÉSERVATIONS DU CLIENT {id_client}")
+    print("============================================================")
+
+    trouve = False
+    for r in reservations:
+        if r.id_client == id_client:
+            print(str(r))
+            trouve = True
+
+    if not trouve:
+        print("Aucune réservation trouvée.")
+
+    print("============================================================")
